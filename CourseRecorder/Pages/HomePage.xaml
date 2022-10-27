@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CourseRecorder.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:CourseRecorder.converters"
+    Title="控制台">
+    <ContentPage.Resources>
+        <converters:RpcBoolToStringConverter x:Key="RpcBoolToStringConverter" />
+        <converters:RpcBoolToBrushConverter x:Key="RpcBoolToBrushConverter" />
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                Grid.Row="0"
+                Margin="0,10,0,0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Course Recorder v1.0"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                LineBreakMode="WordWrap"
+                VerticalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="● " TextColor="{Binding IsRpcAvailable, Converter={StaticResource RpcBoolToBrushConverter}}" />
+                        <Span FontSize="14" Text="RPC 服务" />
+                        <Span Text="{Binding IsRpcAvailable, Converter={StaticResource RpcBoolToStringConverter}}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Border
+                Grid.Row="2"
+                Margin="4"
+                BackgroundColor="#77000000">
+                <Grid
+                    ColumnDefinitions="Auto,*,*,*,*,*"
+                    ColumnSpacing="1"
+                    HeightRequest="1000"
+                    RowDefinitions="Auto,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*"
+                    RowSpacing="1">
+                    <Border
+                        Grid.Row="6"
+                        Grid.Column="3"
+                        BackgroundColor="White"
+                        Stroke="{x:Null}" />
+                    <Border
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        BackgroundColor="White"
+                        Stroke="{x:Null}" />
+                    <Border
+                        Grid.Row="6"
+                        Grid.Column="4"
+                        BackgroundColor="White"
+                        Stroke="{x:Null}" />
+                    <Border
+                        Grid.Row="7"
+                        Grid.Column="3"
+                        BackgroundColor="White"
+                        Stroke="{x:Null}" />
+                    <Border
+                        Grid.Row="5"
+                        Grid.Column="3"
+                        BackgroundColor="White"
+                        Stroke="{x:Null}" />
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

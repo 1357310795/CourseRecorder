@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CourseRecorder.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <Label Text="RPC地址" VerticalOptions="Center" />
+                <Entry
+                    Grid.Column="1"
+                    Text="{Binding Rpc}"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Column="2"
+                    Clicked="ButtonRPC_Clicked"
+                    Text="确定"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,*,Auto">
+                <Label Text="下载地址" VerticalOptions="Center" />
+                <Entry
+                    Grid.Column="1"
+                    Text="{Binding DownloadUrl}"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Column="2"
+                    Text="{Binding DownloadName}"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Column="3"
+                    Clicked="ButtonDownload_Clicked"
+                    Text="确定"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <Label Text="结束任务" VerticalOptions="Center" />
+                <Entry
+                    Grid.Column="1"
+                    Text="{Binding Gid}"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Column="2"
+                    Clicked="ButtonEnd_Clicked"
+                    Text="确定"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <Label Text="直接发送信息" VerticalOptions="Center" />
+                <Entry
+                    Grid.Column="1"
+                    Text="{Binding JsonStr}"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Column="2"
+                    Clicked="ButtonSend_Clicked"
+                    Text="确定"
+                    VerticalOptions="Center" />
+            </Grid>
+            <CollectionView ItemsSource="{Binding Logs}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

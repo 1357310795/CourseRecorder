@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CourseRecorder.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CourseRecorder"
+    xmlns:pages="clr-namespace:CourseRecorder.Pages"
+    Shell.FlyoutBehavior="Disabled">
+    <Shell.ToolbarItems>
+        <ToolbarItem IconImageSource="dotnet_bot.png" />
+    </Shell.ToolbarItems>
+    <ShellContent
+        Title="控制台"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
+
+</Shell>
